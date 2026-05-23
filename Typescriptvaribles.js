@@ -1,0 +1,16 @@
+"use strict";
+let message = "hello";
+console.log(message);
+message = "morning";
+console.log(message);
+let age = 20;
+console.log(age);
+let isactive = true;
+console.log(isactive);
+let data = "abc";
+console.log(data);
+data = 20;
+let b = "mrng";
+console.log(b);
+b = 2;
+console.log(b);

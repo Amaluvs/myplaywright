@@ -1,0 +1,39 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: LoginTestMain.spec.ts >> login using valid credentials
+- Location: tests\LoginTestMain.spec.ts:6:5
+
+# Error details
+
+```
+TypeError: _LoginPageMain.LoginPageMain is not a constructor
+```
+
+# Test source
+
+```ts
+  1  | import{LoginPageMain} from '../pages/LoginPageMain'
+  2  | import {test,expect} from '@playwright/test'
+  3  | import validlogindata from'../utils/testdatacredentials.json'
+  4  | 
+  5  | 
+  6  | test('login using valid credentials',async({page})=>{
+  7  |     
+  8  |     
+> 9  | const loginpage=new LoginPageMain(page)//You are sending page (browser) into the constructor  //pass fixture to constructor
+     |                 ^ TypeError: _LoginPageMain.LoginPageMain is not a constructor
+  10 | await loginpage.goto('https://www.saucedemo.com')
+  11 |     const user=validlogindata.username
+  12 |     const pass=validlogindata.password
+  13 | await loginpage.login(user,pass)
+  14 | //await loginpage.login('standard_user','secret_sauce')
+  15 |  //await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')//In POM, URL is usually placed in the Page Class for reusability
+  16 |     
+  17 | })
+```
