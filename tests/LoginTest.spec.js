@@ -12,5 +12,5 @@ await loginpage.goto()
 await loginpage.login(data.username,data.password)
 //await loginpage.login('standard_user','secret_sauce')
  //await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')//In POM, URL is usually placed in the Page Class for reusability
-    }
+    }    
 })
